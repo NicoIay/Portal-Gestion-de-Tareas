@@ -8,15 +8,15 @@
 </head>
 <body>
     <div class = "formcontainer">
-        <h2>Añadir Tarea Académica</h2>
+        <h4>Añadir Tarea Académica</h4>
         <form id="tareaForm">
           <div class="form-group">
-            <label for="tituloTarea"> Titulo de la Tarea:</label>
+            <label for="tituloTarea"> Titulo de la Tarea:</label><br>
             <input type="text" id="tituloTarea" name="titulo" placeholder="Ej: Entregable 1 PSP" required>
           </div>
 
           <div class="form-group">
-            <label for="materia">Materia a la que pertenece:</label>
+            <label for="materia">Materia a la que pertenece:</label><br>
             <select id="materia" name="materia">
               <option value="Fisica I">Fisica I</option>
               <option value="PSP">PSP</option>
@@ -25,12 +25,12 @@
           </div>
 
           <div class="form-group">
-            <label for="Horas_decicadas_semana"> Horas planeadas a dedicar por semana:</label>
+            <label for="Horas_decicadas_semana"> Horas planeadas a dedicar por semana:</label><br>
             <input type="number" id="horas_estimadas" name="horas_estimadas" placeholder="Ej: 3" required>
           </div>
 
           <div class="form-group">
-            <label for="Prioridad_tarea">Seleccione la prioridad de la tarea</label>
+            <label for="Prioridad_tarea">Seleccione la prioridad de la tarea</label><br>
             <label>
               <input type="checkbox" name="prioridad" value="Alta"> Alta
             </label><br>
@@ -43,7 +43,7 @@
           </div>
 
           <div class="form-group">
-            <label for="Estado de entrega">¿Cual es el estado de esta tarea?</label>
+            <label for="Estado de entrega">¿Cual es el estado de esta tarea?</label><br>
             <input type="radio" id="Completada" name="estado" value="completada">
             <label for="completada">Completada</label><br>
             <input type="radio" id="Pendiente" name="estado" value="pendiente">
@@ -51,7 +51,7 @@
           </div>
 
           <div class="form-group">
-            <label for="tipo_entrega">¿Que tipo de entrega es?:</label>
+            <label for="tipo_entrega">¿Que tipo de entrega es?:</label><br>
             <select id="tipo_entrega" name="tipo_entrega">
               <option value="PDF">PDF</option>
               <option value="Aporte en el foro">Aporte en el foro</option>
@@ -61,12 +61,12 @@
           </div>
 
           <div class="form-group">
-            <label for="fechaLimite">Fecha límite:</label>
+            <label for="fechaLimite">Fecha límite:</label><br>
             <input type="date" id="fechaLimite" name="fecha_limite" placeholder="Seleccione la fecha limite" required>
           </div>
           
           <div class="form-group">
-            <label for="fechaLimite">Semestre al que pertenece:</label>
+            <label for="fechaLimite">Semestre al que pertenece:</label><br>
             <input type="number" id="semestre" name="semestre" placeholder="Ej: 3" required>
           </div>
 
