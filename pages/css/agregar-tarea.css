@@ -1,7 +1,7 @@
 .btn-volver {
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: 70px;
+    right: 50px;
     padding: 10px 15px;
     background-color: #4CAF50;
     color: white;
@@ -16,3 +16,23 @@
   .btn-volver:hover {
     background-color: #45a049;
   }
+
+  body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: hwb(14 71% 5%);
+  margin: 0;
+  padding: 20px;
+}
+
+h4{
+  font-size: 100px;
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+.formcontainer div{
+  background-color:aliceblue;
+  width: 600px;
+  height:80px;
+}
