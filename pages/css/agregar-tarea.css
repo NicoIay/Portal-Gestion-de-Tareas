@@ -1,8 +1,4 @@
-<!-- Botón de retroceso -->
-<button onclick="window.history.back()" class="btn-volver">⬅ Volver</button>
-
-<style>
-  .btn-volver {
+.btn-volver {
     position: fixed;
     top: 20px;
     right: 20px;
@@ -16,8 +12,7 @@
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: background-color 0.3s ease;
   }
-
+  
   .btn-volver:hover {
     background-color: #45a049;
   }
-</style>
