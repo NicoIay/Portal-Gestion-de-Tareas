@@ -7,11 +7,7 @@
     <link rel="stylesheet" href="css/agregar-tarea.css">
 </head>
 <body>
-    <!-- Botón para volver -->
-    <button class="btn-volver" onclick="volverPagina()">⬅ Volver</button>
     <div class = "formcontainer">
-        <!-- Botón para volver -->
-        <button class="btn-volver" onclick="volverPagina()">⬅ Volver</button>
         <h4>Añadir Tarea Académica</h4>
         <form id="tareaForm">
           <div class="form-group">
@@ -70,11 +66,13 @@
             <label for="fechaLimite">Semestre al que pertenece:</label><br>
             <input type="number" id="semestre" name="semestre" placeholder="Ej: 3" required>
           </div>
+              <!-- Botón para volver -->
+              <button class="btn-volver" onclick="volverPagina()">⬅ Volver</button>
     </div>
           
     <main>
         <p></p>
     </main>
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
