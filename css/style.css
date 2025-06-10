@@ -1,0 +1,62 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px;
+  }
+  
+  .card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 600px;
+    padding: 20px 30px;
+    margin: 15px 0;
+    border-radius: 25px;
+    background: white;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    position: relative;
+  }
+  
+  .card::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 20px;
+    height: 100%;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+  }
+  
+  .card:nth-child(1)::after { background: #FFD700; } /* Amarillo */
+  .card:nth-child(2)::after { background: #6A5ACD; } /* Morado/Azul */
+  .card:nth-child(3)::after { background: #32CD32; } /* Verde */
+  .card:nth-child(4)::after { background: #20B2AA; } /* Azul-agua */
+  
+  .icon {
+    font-size: 28px;
+    margin-right: 20px;
+    color: #333;
+  }
+  
+  .info h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+  }
+  
+  .info p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #888;
+  }
+  
+  .left {
+    display: flex;
+    align-items: center;
+  }
+  
