@@ -17,7 +17,7 @@ body {
     margin: 15px 0;
     border-radius: 25px;
     background: white;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    box-shadow: 5px 5px 16px 0px rgba(0, 0, 0, 0.303);
     position: relative;
   }
   
@@ -32,10 +32,10 @@ body {
     border-bottom-right-radius: 25px;
   }
   
-  .card:nth-child(1)::after { background: #FFD700; } /* Amarillo */
-  .card:nth-child(2)::after { background: #6A5ACD; } /* Morado/Azul */
-  .card:nth-child(3)::after { background: #32CD32; } /* Verde */
-  .card:nth-child(4)::after { background: #20B2AA; } /* Azul-agua */
+  .card-dashboard::after { background: #FFD700; } /* Amarillo */
+  .card-agregar::after { background: #6A5ACD; } /* Morado/Azul */
+  .card-ver::after  { background: #32CD32; } /* Verde */
+  .card-perfil::after { background: #20B2AA; } /* Azul-agua */
   
   .icon {
     font-size: 28px;
