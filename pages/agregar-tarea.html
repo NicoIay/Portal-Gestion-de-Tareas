@@ -1,77 +1,53 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Proyecto</title>
-    <link rel="stylesheet" href="css/agregar-tarea.css">
+  <meta charset="UTF-8">
+  <title>Crear Tarea</title>
+  <link rel="stylesheet" href="./css/agregar-tarea.css">
 </head>
 <body>
-    <div class = "formcontainer">
-        <h4>Añadir Tarea Académica</h4>
-        <form id="tareaForm">
-          <div class="form-group">
-            <label for="tituloTarea"> Titulo de la Tarea:</label><br>
-            <input type="text" id="tituloTarea" name="titulo" placeholder="Ej: Entregable 1 PSP" required>
-          </div>
+  <div class="formulario-container">
+    <form action="#" method="POST">
+      <h2>Crear Tarea</h2>
 
-          <div class="form-group">
-            <label for="materia">Materia a la que pertenece:</label><br>
-            <select id="materia" name="materia">
-              <option value="Fisica I">Fisica I</option>
-              <option value="PSP">PSP</option>
-              <option value="Paradigmas de Programacion">Paradigmas de Programacion</option>
-            </select>
-          </div>
+      <div class="campo">
+        <label for="nombre">Nombre de la Tarea:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ej: Práctica de dinámica">
+      </div>
 
-          <div class="form-group">
-            <label for="Horas_decicadas_semana"> Horas planeadas a dedicar por semana:</label><br>
-            <input type="number" id="horas_estimadas" name="horas_estimadas" placeholder="Ej: 3" required>
-          </div>
+      <div class="campo">
+        <label for="materia">Materia:</label>
+        <select id="materia" name="materia">
+          <option value="">Selecciona una materia</option>
+          <option value="Fisica 1">Física 1</option>
+          <option value="PSP">PSP</option>
+          <option value="Paradigmas">Paradigmas de Programación</option>
+        </select>
+      </div>
 
-          <div class="form-group">
-            <label for="Prioridad_tarea">Seleccione la prioridad de la tarea</label><br>
-            <input type="radio" id="Alta" name="prioridad" value="alta">
-            <label for="alta">Alta</label><br>
-            <input type="radio" id="Media" name="prioridad" value="media">
-            <label for="media">Media</label><br>
-            <input type="radio" id="Baja" name="prioridad" value="baja">
-            <label for="baja">Baja</label><br>
-          </div>
+      <div class="campo">
+        <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion" name="descripcion" rows="3" placeholder="Agrega detalles..."></textarea>
+      </div>
 
-          <div class="form-group">
-            <label for="Estado de entrega">¿Cual es el estado de esta tarea?</label><br>
-            <input type="radio" id="Completada" name="estado" value="completada">
-            <label for="completada">Completada</label><br>
-            <input type="radio" id="Pendiente" name="estado" value="pendiente">
-            <label for="pendiente">Pendiente</label><br>
-          </div>
+      <div class="campo">
+        <label for="fecha">Fecha de entrega:</label>
+        <input type="date" id="fecha" name="fecha">
+      </div>
 
-          <div class="form-group">
-            <label for="tipo_entrega">¿Que tipo de entrega es?:</label><br>
-            <select id="tipo_entrega" name="tipo_entrega">
-              <option value="PDF">PDF</option>
-              <option value="Aporte en el foro">Aporte en el foro</option>
-              <option value="Codigo Fuente">Codigo Fuente</option>
-              <option value="Grafica">Grafica</option>
-            </select>
-          </div>
+      <div class="campo">
+        <label for="estado">Estado:</label>
+        <select id="estado" name="estado">
+          <option value="pendiente">Pendiente</option>
+          <option value="completada">Completada</option>
+        </select>
+      </div>
 
-          <div class="form-group">
-            <label for="fechaLimite">Fecha límite:</label><br>
-            <input type="date" id="fechaLimite" name="fecha_limite" placeholder="Seleccione la fecha limite" required>
-          </div>
-          
-          <div class="form-group">
-            <label for="fechaLimite">Semestre al que pertenece:</label><br>
-            <input type="number" id="semestre" name="semestre" placeholder="Ej: 3" required>
-          </div>
-    </div>
-               <!-- Botón para volver - Esquina superior derecha-->
-               <button class="btn-volver" onclick="volverPagina()">⬅ Volver</button>         
-    <main>
-        <p></p>
-    </main>
-    <script src="js/main.js"></script>
+      <button type="submit" class="btn-crear">Crear Tarea</button>
+      <button type="button" class="btn-volver" onclick="volverPagina()">⬅ Volver</button>
+    </form>
+  </div>
+
+  <script src="js/main.js"></script>
 </body>
 </html>

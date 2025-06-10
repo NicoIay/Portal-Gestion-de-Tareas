@@ -17,48 +17,54 @@
   background-color: #45a049;
 }
 
+/* Estilo general */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: hwb(14 71% 5%);
+  background-color: #f4f4f4;
   margin: 0;
-  padding: 20px;
+  padding: 40px;
+  color: #333;
 }
 
 h1 {
   text-align: center;
-  color: #2c3e50;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+  font-size: 2rem;
 }
 
 .materia {
-  background-color: white;
-  border-radius: 12px;
-  padding: 20px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   margin-bottom: 40px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .materia h2 {
   margin-top: 0;
-  color: #34495e;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
 }
 
 .progreso {
-  background-color: hwb(157 51% 41%);
-  border-radius: 8px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
   overflow: hidden;
-  margin-bottom: 20px;
-  height: 25px;
+  height: 24px;
+  margin-bottom: 25px;
 }
 
 .barra {
+  background-color: #4caf50;
   height: 100%;
-  background-color: hsl(110, 46%, 47%);
-  color: #f7f7f7;
+  color: white;
   text-align: center;
-  line-height: 25px;
+  line-height: 24px;
+  border-radius: 10px 0 0 10px;
   font-weight: bold;
-  border-radius: 8px 0 0 8px;
 }
 
 .columna {
@@ -66,45 +72,47 @@ h1 {
 }
 
 .columna h3 {
-  border-bottom: 2px solid hwb(182 48% 8%);
   margin-bottom: 10px;
-  padding-bottom: 5px;
+  font-size: 1.2rem;
 }
 
-.columna p {
-  background-color: #ecf0f1;
-  padding: 10px;
-  border-radius: 6px;
-  margin-bottom: 8px;
-  font-weight: bold;
-  transition: transform 0.2s ease;
-}
-
-.columna p:hover {
-  transform: scale(1.02);
-}
-
-/* Prioridades */
-.alta {
-  background-color: #e74c3c;
-  color: white;
-}
-
-.media {
-  background-color: #f39c12;
-  color: #333;
-}
-
-.baja {
-  background-color: #2ecc71;
-  color: white;
+.pendiente,
+.completada {
+  background-color: #f8f8f8;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 8px 0;
+  font-size: 0.95rem;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.05);
 }
 
 .pendiente {
-    color: rgb(243, 63, 18);
-    font-weight: bold;
+  border-left: 6px solid #f39c12;
 }
 
 .completada {
-    color: hsl(288, 69%, 34%);
+  border-left: 6px solid #2ecc71;
+  text-decoration: line-through;
+  color: #999;
+}
+
+/* Botón volver */
+.btn-volver {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #333;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-volver:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
 }
