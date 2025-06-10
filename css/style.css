@@ -35,6 +35,7 @@ body {
   .card-dashboard::after { background: #FFD700; } /* Amarillo */
   .card-agregar::after { background: #6A5ACD; } /* Morado/Azul */
   .card-ver::after  { background: #32CD32; } /* Verde */
+  .card-buscar::after  { background: #f14949; } /* Verde */
   .card-perfil::after { background: #20B2AA; } /* Azul-agua */
   
   .icon {

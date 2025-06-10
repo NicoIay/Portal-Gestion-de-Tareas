@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario de Búsqueda</title>
+  <link rel="stylesheet" href="css/buscar-tarea.css">
+</head>
+<body>
+  <div class="formulario-container">
+    <form action="#" method="GET">
+      <h2>Buscar Tarea</h2>
+      
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Nombre de tarea">
+
+      <label for="Materia">Materia:</label>
+      <select id="Materia" name="Materia">
+        <option value="">Todas</option>
+        <option value="Fisica 1">Fisica 1</option>
+        <option value="PSP">PSP</option>
+        <option value="Paradigmas de programacion">Paradigmas de programacion</option>
+      </select>
+
+      <label for="Fecha de Entrega">Fecha de Entrega:</label>
+      <input type="date" id="fecha" name="fecha">
+
+      <label for="estado de tarea">Estado de Tarea</label>
+      <select id="estado de tarea" name="estado de tarea">
+        <option value="">Selecciona</option>
+        <option value="completada">Completada</option>
+        <option value="pendiente">Pendiente</option>
+      </select>
+            <!-- Botón para volver - Esquina superior derecha-->
+            <button class="btn-volver" onclick="volverPagina()">⬅ Volver</button>
+            <script src="js/main.js"></script>
+    </form>
+  </div>
+</body>
+</html>
