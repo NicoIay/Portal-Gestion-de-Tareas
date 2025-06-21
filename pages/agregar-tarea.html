@@ -48,68 +48,7 @@
     </form>
   </div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => { // **ES RECOMENDADO USAR DOMContentLoaded**
-        const $formulario = document.querySelector("#formulario");
-        const $nombre = document.querySelector("#nombre");
-        const $descripcion = document.querySelector("#descripcion");
-        const $fecha = document.querySelector("#fecha");
-        const $materia = document.querySelector("#materia"); // **CORREGIDO: Faltaban comillas**
-        
-
-        if ($formulario) { // Verificar que el formulario existe
-            $formulario.onsubmit = evento => {
-                evento.preventDefault();
-
-                const nombre = $nombre.value.trim();
-                const descripcion = $descripcion.value.trim();
-                const fecha = $fecha.value;
-                const materia = $materia.value;
-                const estado = $estado.value; // Obtener el valor del estado
-
-                const MIN_LENGTH_DESCRIPCION = 10; // Mejor nombre para la constante
-
-                // Validaciones
-                if (nombre === "") {
-                    alert("El nombre de la tarea no puede estar vacío.");
-                    return;
-                }
-
-                if (nombre.length <= 5) {
-                    alert("El nombre de la tarea es muy corto (mínimo 6 caracteres).");
-                    return;
-                }
-
-                if (materia === "") { // Validar que se seleccionó una materia
-                    alert("El campo de materia no puede estar vacío.");
-                    return;
-                }
-                
-
-                if (descripcion.length < MIN_LENGTH_DESCRIPCION) {
-                    alert(`La descripción es muy corta. Debe contener al menos ${MIN_LENGTH_DESCRIPCION} caracteres.`);
-                    return;
-                }
-
-              
-                // Si todas las validaciones PASAN, entonces procesa los datos:
-                const nuevaTarea = {
-                    id: Date.now(),
-                    nombre: nombre,
-                    materia: materia, // Usar la variable materia ya obtenida
-                    descripcion: descripcion,
-                    fechaEntrega: fecha,
-                    estado: estado // Usar la variable estado ya obtenida
-                };
-
-                console.log("Nueva Tarea:", nuevaTarea);
-                alert("Tarea creada exitosamente!"); // Mensaje de éxito
-
-                $formulario.reset(); // **CORREGIDO: Resetear el formulario**
-                
-            };
-        } 
-    });
-  </script>
+  <script></script>
+  
 </body>
 </html>
