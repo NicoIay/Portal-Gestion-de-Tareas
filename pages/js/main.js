@@ -89,7 +89,7 @@ $formulario.onsubmit = evento => {
                 return; // Detiene la función
             }
 
-            if (!confnewpassw === newpassw) { 
+            if (confnewpassw !== newpassw) { 
                 alert("Nueva contraseña no es igual en los dos campos");
                 return; 
             }
