@@ -1,22 +1,3 @@
-.btn-volver {
-    position: fixed;
-    top: 20px;
-    right: 30px;
-    background-color: rgba(0, 0, 0, 0.05);
-    color: #333;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 30px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.btn-volver:hover {
-    background-color: rgba(0, 0, 0, 0.15);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px);
-}
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -29,7 +10,7 @@ body {
     margin: 0; 
 
 
-.formulario-container { /* Esta es la clase que tu CSS actual espera */
+.perfil-container { /* Esta es la clase que tu CSS actual espera */
     max-width: 850px;
     width: 50%;
     background-color: #f9f9f9;
@@ -61,7 +42,7 @@ label {
     color: #333;
 }
 
-/* Asegúrate de incluir 'input[type="password"]' aquí también */
+
 input[type="text"],
 input[type="date"],
 input[type="password"], /* AÑADIDO para tus campos de contraseña */
@@ -94,7 +75,7 @@ textarea {
     max-height: 200px;
 }
 
-/* Botón principal */
+
 .btn-crear {
     background: #6A5ACD;
     color: white;
