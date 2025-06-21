@@ -73,25 +73,26 @@ const $oldpassw = document.querySelector("#oldpassw");
 const $newpassw = document.querySelector("#newpassw");
 const $confnewpassw = document.querySelector("#confnewpassw");
 
-
-$formulario.onsubmit = evento => {
+        
+        $formulariopw.onsubmit = evento => {
             evento.preventDefault(); // Detiene el envío predeterminado del formulario
 
-            const oldpassw = $oldpassw.value.trim(); 
+            const oldpassw = $oldpassw.value.trim();
             const newpassw = $newpassw.value.trim();
-            const confnewpassw = $confnewpassw.value; 
-            
+            const confnewpassw = $confnewpassw.value.trim();
 
             // Validaciones
+            const MIN_LENGTH_PASSWORD = 8; // Definir una constante para la longitud mínima
 
-            if (newpassw.length <= 8) { // Si tiene 5 o menos caracteres
-                alert("Nueva contraseña es muy corta");
-                return; // Detiene la función
+            if (newpassw.length < MIN_LENGTH_PASSWORD) { // CAMBIO: < MIN_LENGTH_PASSWORD
+                alert(`La nueva contraseña es muy corta. Debe tener al menos ${MIN_LENGTH_PASSWORD} caracteres.`);
+                return;
             }
 
-            if (confnewpassw !== newpassw) { 
-                alert("Nueva contraseña no es igual en los dos campos");
-                return; 
+
+            
+            if (newpassw !== confnewpassw) { 
+                alert("La nueva contraseña y su confirmación no coinciden.");
+                return;
             }
 
-    
