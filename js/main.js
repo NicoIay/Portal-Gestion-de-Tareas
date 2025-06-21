@@ -8,25 +8,23 @@ function volverPagina() {
 
 
 const $formulario = document.querySelector("#formulario");
-        const $nombre = document.querySelector("#nombre");
-        const $descripcion = document.querySelector("#descripcion");
-        const $fecha = document.querySelector("#fecha");
-        const $materia = document.querySelector(#materia);
+const $nombre = document.querySelector("#nombre");
+const $descripcion = document.querySelector("#descripcion");
+const $fecha = document.querySelector("#fecha");
+const $materia = document.querySelector("#materia")
 
-        $formulario.onsubmit = evento => {
+$formulario.onsubmit = evento => {
             evento.preventDefault(); // Detiene el envío predeterminado del formulario
 
-            const nombre = $nombre.value.trim(); // .trim() para quitar espacios al inicio/final
+            const nombre = $nombre.value.trim(); 
             const descripcion = $descripcion.value.trim();
-            const fecha = $fecha.value; /
-            const materia = $materia.value;
-
-            const largo_descripcion = 10;
+            const fecha = $fecha.value; 
+            const materia = $materia.value
 
             // Validaciones
-            if (nombre === "") { // Mejor validar si está vacío, no solo la longitud
+            if (nombre === "") { 
                 alert("El nombre de la tarea no puede estar vacío.");
-                return; // Detiene la función, el formulario no se procesa
+                return; 
             }
 
             if (nombre.length <= 5) { // Si tiene 5 o menos caracteres
@@ -34,16 +32,19 @@ const $formulario = document.querySelector("#formulario");
                 return; // Detiene la función
             }
 
-            if (descripcion.length < largo_descripcion){
-                alert("la descripcion debe contener al menos 10 caracteres")
-                return;
-            }
-            if(materia == ""){
+            // Aquí puedes añadir más validaciones:
+            if (materia === "") { 
                 alert("El campo de materia no puede estar vacio");
-                return; // Detiene la función
+                return; 
             }
 
-            // Si todas las validaciones PASAN, entonces procesa los datos:
+          const MIN_LENGTH_DESCRIPCION = 10;
+          if (descripcion.length < MIN_LENGTH_DESCRIPCION) {
+              alert(`La descripción es muy corta. Debe tener al menos ${MIN_LENGTH_DESCRIPCION} caracteres.`);
+              return; 
+          }
+          
+
             const nuevaTarea = {
                 id: Date.now(), // Un ID simple basado en la marca de tiempo
                 nombre: nombre,
@@ -51,10 +52,9 @@ const $formulario = document.querySelector("#formulario");
                 descripcion: descripcion,
                 fechaEntrega: fecha,
                 estado: document.querySelector("#estado").value
-                // Añadir aquí los campos PSP como tiempoEstimado, tiempoReal, etc.
+                
             };
 
-        
+          
+            $formulario.reset();
         };
-
-      
