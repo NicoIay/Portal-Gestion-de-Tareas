@@ -18,6 +18,7 @@ $formulario.onsubmit = evento => {
             const nombre = $nombre.value.trim(); 
             const descripcion = $descripcion.value.trim();
             const fecha = $fecha.value; 
+            const materia = $materia.value
 
             // Validaciones
             if (nombre === "") { 
@@ -38,7 +39,7 @@ $formulario.onsubmit = evento => {
 
           const MIN_LENGTH_DESCRIPCION = 10;
           if (descripcion.length < MIN_LENGTH_DESCRIPCION) {
-              alert("La descripción es muy corta. Debe tener al menos ${MIN_LENGTH_DESCRIPCION} caracteres.");
+              alert(`La descripción es muy corta. Debe tener al menos ${MIN_LENGTH_DESCRIPCION} caracteres.`);
               return; 
           }
           
