@@ -48,7 +48,86 @@
     </form>
   </div>
 
-  <script src="js/main.js"></script>
+  <script>
+   function volverPagina() {
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = "index.html"; // O la página principal de tu aplicación
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const $formulario = document.querySelector("#formulario");
+            const $nombre = document.querySelector("#nombre");
+            const $descripcion = document.querySelector("#descripcion");
+            const $fecha = document.querySelector("#fecha");
+            const $materia = document.querySelector("#materia");
+            const $estado = document.querySelector("#estado"); // Asegúrate de seleccionar el elemento #estado
+
+            
+            if ($formulario) {
+                $formulario.onsubmit = evento => {
+                    evento.preventDefault(); // Detiene el envío predeterminado del formulario
+
+                    const nombre = $nombre.value.trim();
+                    const descripcion = $descripcion.value.trim();
+                    const fecha = $fecha.value;
+                    const materia = $materia.value;
+                    const estado = $estado.value;
+
+                    const MIN_LENGTH_DESCRIPCION = 10;
+
+                    // Validaciones
+                    if (nombre === "") {
+                        alert("El nombre de la tarea no puede estar vacío.");
+                        return;
+                    }
+
+                    if (nombre.length <= 5) {
+                        alert("El nombre de la tarea es muy corto (mínimo 6 caracteres).");
+                        return;
+                    }
+
+                    if (materia === "") {
+                        alert("El campo de materia no puede estar vacío.");
+                        return;
+                    }
+
+                    if (descripcion === "") {
+                        alert("La descripción de la tarea no puede estar vacía.");
+                        return;
+                    }
+
+                    if (descripcion.length < MIN_LENGTH_DESCRIPCION) {
+                        alert(`La descripción es muy corta. Debe tener al menos ${MIN_LENGTH_DESCRIPCION} caracteres.`);
+                        return;
+                    }
+
+                    if (fecha === "") {
+                        alert("La fecha de entrega no puede estar vacía.");
+                        return;
+                    }
+
+                    // Si todas las validaciones PASAN, entonces procesa los datos:
+                    const nuevaTarea = {
+                        id: Date.now(), // Un ID simple basado en la marca de tiempo
+                        nombre: nombre,
+                        materia: materia,
+                        descripcion: descripcion,
+                        fechaEntrega: fecha,
+                        estado: estado
+                    };
+
+                    console.log("Nueva Tarea Creada:", nuevaTarea);
+                    alert("Tarea creada exitosamente!");
+
+                    $formulario.reset(); // Restablece el formulario a sus valores iniciales
+                   
+                };
+            }
+        }); 
+  </script>
   
 </body>
 </html>
