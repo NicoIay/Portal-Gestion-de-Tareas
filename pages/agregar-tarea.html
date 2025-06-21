@@ -7,7 +7,7 @@
 </head>
 <body>
   <div class="formulario-container">
-    <form action="#" method="POST">
+    <form action="#" method="POST" id="formulario">
       <h2>Crear Tarea</h2>
 
       <div class="campo">
@@ -48,6 +48,23 @@
     </form>
   </div>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js">
+    const $formulario = document.querySelector("#formulario"),
+          $nombre=document.querySelector("#nombre"),
+          $descripcion=document.querySelector("#descripcion"),
+          $fecha=document.querySelector("#feccha");
+    $formulario.onsubmit = evento => {
+      evento.preventDefault();
+      const nombre = $nombre.value;
+      const descripcion = $descripcion.value;
+      const fecha = $fecha.value;
+      
+      if(nombre.lenght > 5){
+        $formulario.submit();
+      }else{
+        alert("nombre muy corto");
+      }
+    }
+  </script>
 </body>
 </html>
