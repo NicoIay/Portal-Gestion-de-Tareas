@@ -48,29 +48,6 @@
     </form>
   </div>
 
-  <script>
-   const $formulario = document.querySelector("#formulario");
-        const $nombre = document.querySelector("#nombre");
-        const $descripcion = document.querySelector("#descripcion");
-        const $fecha = document.querySelector("#fecha"); // CORRECCIÓN: #fecha
-
-        $formulario.onsubmit = evento => {
-            evento.preventDefault(); // Detiene el envío predeterminado del formulario
-
-            const nombre = $nombre.value.trim(); // .trim() para quitar espacios al inicio/final
-            const descripcion = $descripcion.value.trim();
-            const fecha = $fecha.value; // La fecha se maneja diferente, no trim
-
-            // Validaciones
-            if (nombre === "") { // Mejor validar si está vacío, no solo la longitud
-                alert("El nombre de la tarea no puede estar vacío.");
-                return; // Detiene la función, el formulario no se procesa
-            }
-
-            if (nombre.length <= 5) { // Si tiene 5 o menos caracteres
-                alert("El nombre de la tarea es muy corto (mínimo 6 caracteres).");
-                return; // Detiene la función
-            }
-  </script>
+  <script src="js/main.js"></script>
 </body>
 </html>
