@@ -7,111 +7,57 @@ function volverPagina() {
 }
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    const toggle = document.getElementById("toggle"); // Asegúrate de que este 'toggle' exista en el HTML donde se usa
-
-    // Solo si el elemento 'toggle' existe en la página actual
-    if (toggle) {
-        // Aplicar modo guardado al cargar la página
-        const modoGuardado = localStorage.getItem("modo");
-        if (modoGuardado === "oscuro") {
-            document.body.classList.add("modo-oscuro");
-            toggle.checked = true;
-        }
-
-        // Escuchar cambio del checkbox
-        toggle.addEventListener("change", () => {
-            document.body.classList.toggle("modo-oscuro");
-
-            const modoActual = document.body.classList.contains("modo-oscuro") ? "oscuro" : "claro";
-            localStorage.setItem("modo", modoActual);
-        });
-    }
-
-    
-    const $formularioCrearTarea = document.querySelector("#formulario");
-    if ($formularioCrearTarea) {
+const $formulario = document.querySelector("#formulario");
         const $nombre = document.querySelector("#nombre");
         const $descripcion = document.querySelector("#descripcion");
-        const $fecha = document.querySelector("#fecha");
-        const $materia = document.querySelector("#materia"); // Necesario para la validación de materia
+        const $fecha = document.querySelector("#fecha"); // CORRECCIÓN: #fecha
 
-        $formularioCrearTarea.onsubmit = evento => {
-            evento.preventDefault();
+        $formulario.onsubmit = evento => {
+            evento.preventDefault(); // Detiene el envío predeterminado del formulario
 
-            const nombre = $nombre.value.trim();
+            const nombre = $nombre.value.trim(); // .trim() para quitar espacios al inicio/final
             const descripcion = $descripcion.value.trim();
-            const fecha = $fecha.value;
-            const materiaSeleccionada = $materia.value; // Obtener el valor de la materia aquí
+            const fecha = $fecha.value; // La fecha se maneja diferente, no trim
 
-            // Validaciones para el formulario de Tarea
-            if (nombre === "") {
+            // Validaciones
+            if (nombre === "") { // Mejor validar si está vacío, no solo la longitud
                 alert("El nombre de la tarea no puede estar vacío.");
-                return;
+                return; // Detiene la función, el formulario no se procesa
             }
-            if (nombre.length <= 5) {
+
+            if (nombre.length <= 5) { // Si tiene 5 o menos caracteres
                 alert("El nombre de la tarea es muy corto (mínimo 6 caracteres).");
-                return;
-            }
-            if (materiaSeleccionada === "") {
-                alert("Debes seleccionar una materia.");
-                return;
+                return; // Detiene la función
             }
 
-            const MIN_LENGTH_DESCRIPCION = 10;
-        
-            if (descripcion.length < MIN_LENGTH_DESCRIPCION) {
-                alert(`La descripción es muy corta. Debe tener al menos ${MIN_LENGTH_DESCRIPCION} caracteres.`);
-                return;
-            }
+            // Aquí puedes añadir más validaciones:
+            // - Materia seleccionada (que no sea el option value vacío)
+            // - Fecha válida y en el futuro (si aplica)
+            // - Descripción no vacía o con longitud mínima/máxima
+            // - Otros campos PSP (tiempo estimado, real)
 
-        
+            // Si todas las validaciones PASAN, entonces procesa los datos:
+            const nuevaTarea = {
+                id: Date.now(), // Un ID simple basado en la marca de tiempo
+                nombre: nombre,
+                materia: document.querySelector("#materia").value,
+                descripcion: descripcion,
+                fechaEntrega: fecha,
+                estado: document.querySelector("#estado").value
+                // Añadir aquí los campos PSP como tiempoEstimado, tiempoReal, etc.
+            };
+
+            console.log("Tarea lista para guardar/procesar:", nuevaTarea);
+            alert("Tarea validada correctamente y lista para procesamiento (revisa la consola).");
+
+            // *** Aquí iría la lógica para guardar la tarea ***
+            // Por ejemplo, guardarla en localStorage:
+            // let tareas = JSON.parse(localStorage.getItem('tareas')) || [];
+            // tareas.push(nuevaTarea);
+            // localStorage.setItem('tareas', JSON.stringify(tareas));
+
+            // Después de procesar, puedes resetear el formulario (opcional):
+            $formulario.reset();
         };
-    }
 
-
-    const $formulariopw = document.querySelector("#formulariopw");
-    if ($formulariopw) {
-        const $oldpassw = document.querySelector("#oldpassw");
-        const $newpassw = document.querySelector("#newpassw");
-        const $confnewpassw = document.querySelector("#confnewpassw");
-
-        $formulariopw.onsubmit = evento => {
-            evento.preventDefault();
-
-            const oldpassw = $oldpassw.value.trim();
-            const newpassw = $newpassw.value.trim();
-            const confnewpassw = $confnewpassw.value.trim();
-
-            const MIN_LENGTH_PASSWORD = 8;
-
-            // Validaciones para el formulario de Cambio de Contraseña
-            if (oldpassw === "") {
-                alert("La contraseña actual no puede estar vacía.");
-                return;
-            }
-
-            if (newpassw === "") {
-                alert("La nueva contraseña no puede estar vacía.");
-                return;
-            }
-
-            if (newpassw.length < MIN_LENGTH_PASSWORD) {
-                alert(`La nueva contraseña es muy corta. Debe tener al menos ${MIN_LENGTH_PASSWORD} caracteres.`);
-                return;
-            }
-
-            if (confnewpassw === "") {
-                alert("Debes confirmar la nueva contraseña.");
-                return;
-            }
-
-            if (newpassw !== confnewpassw) {
-                alert("La nueva contraseña y su confirmación no coinciden.");
-                return;
-            }
-
-            if (oldpassw === newpassw) {
-                alert("La nueva contraseña no puede ser igual a la contraseña actual.");
-                return;
-            }
+      
