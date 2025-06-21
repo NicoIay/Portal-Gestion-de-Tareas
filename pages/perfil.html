@@ -32,6 +32,13 @@
 
     
   <script>
+    function volverPagina() {
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = "index.html"; // O la página principal de tu aplicación
+            }
+        }
     const $formulariopw = document.querySelector("#formulariopw");
         const $oldpassw = document.querySelector("#oldpassw");
         const $newpassw = document.querySelector("#newpassw");
