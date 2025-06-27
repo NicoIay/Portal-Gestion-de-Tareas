@@ -1,97 +1,66 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portal Gestión de Tareas - Crear Tarea</title>
-  <style>
-    body {
-      background-color: #f9f9f9;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      font-family: sans-serif;
-    }
-    .card {
-      background: white;
-      padding: 2rem;
-      border-radius: 1rem;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-      width: 100%;
-      max-width: 400px;
-    }
-    h2 {
-      text-align: center;
-      margin-bottom: 1.5rem;
-      font-weight: 600;
-    }
-    label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-weight: 500;
-    }
-    input[type="text"], input[type="date"], select, textarea {
-      width: 100%;
-      padding: 0.5rem;
-      border: 1px solid #ddd;
-      border-radius: 0.5rem;
-      margin-bottom: 1rem;
-      font-size: 0.9rem;
-      box-sizing: border-box;
-    }
-    textarea {
-      resize: none;
-      height: 100px;
-    }
-    button {
-      background: #7c3aed;
-      color: white;
-      border: none;
-      padding: 0.7rem;
-      border-radius: 0.5rem;
-      font-weight: 600;
-      cursor: pointer;
-      width: 100%;
-      font-size: 1rem;
-      transition: background 0.3s;
-    }
-    button:hover {
-      background: #6d28d9;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dashboard - Portal Gestión de Tareas</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-  <div class="card">
-    <h2>Crear Tarea</h2>
-    <form>
-      <label>Nombre de la Tarea:</label>
-      <input type="text" placeholder="Ej: Práctica de dinámica" />
+<body class="bg-gray-50 min-h-screen p-6">
+  <div class="max-w-7xl mx-auto space-y-6">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div class="bg-white p-4 rounded-xl shadow flex flex-col">
+        <span class="text-sm text-gray-500">Tareas Completadas</span>
+        <span class="text-2xl font-bold mt-2">45</span>
+      </div>
+      <div class="bg-white p-4 rounded-xl shadow flex flex-col">
+        <span class="text-sm text-gray-500">Tareas Pendientes</span>
+        <span class="text-2xl font-bold mt-2">12</span>
+      </div>
+      <div class="bg-white p-4 rounded-xl shadow flex flex-col">
+        <span class="text-sm text-gray-500">Total Tareas</span>
+        <span class="text-2xl font-bold mt-2">57</span>
+      </div>
+      <div class="bg-white p-4 rounded-xl shadow flex flex-col">
+        <span class="text-sm text-gray-500">Porcentaje Completadas</span>
+        <span class="text-2xl font-bold mt-2">79%</span>
+      </div>
+    </div>
 
-      <label>Materia:</label>
-      <select>
-        <option>Selecciona una materia</option>
-        <option>Matemáticas</option>
-        <option>Física</option>
-        <option>Programación</option>
-      </select>
-
-      <label>Descripción:</label>
-      <textarea placeholder="Agrega detalles..."></textarea>
-
-      <label>Fecha de entrega:</label>
-      <input type="date" />
-
-      <label>Estado:</label>
-      <select>
-        <option>Pendiente</option>
-        <option>En progreso</option>
-        <option>Completada</option>
-      </select>
-
-      <button type="submit">Crear Tarea</button>
-    </form>
+    <div class="bg-white p-6 rounded-xl shadow">
+      <h2 class="text-lg font-semibold mb-4">Resumen de Tareas</h2>
+      <table class="w-full text-left border border-gray-200 rounded-lg overflow-hidden">
+        <thead class="bg-gray-100">
+          <tr>
+            <th class="py-2 px-4">Nombre</th>
+            <th class="py-2 px-4">Materia</th>
+            <th class="py-2 px-4">Fecha de Entrega</th>
+            <th class="py-2 px-4">Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-t">
+            <td class="py-2 px-4">Práctica de Física</td>
+            <td class="py-2 px-4">Física</td>
+            <td class="py-2 px-4">2025-07-01</td>
+            <td class="py-2 px-4 text-green-600">Completada</td>
+          </tr>
+          <tr class="border-t">
+            <td class="py-2 px-4">Taller de Matemáticas</td>
+            <td class="py-2 px-4">Matemáticas</td>
+            <td class="py-2 px-4">2025-07-05</td>
+            <td class="py-2 px-4 text-yellow-500">Pendiente</td>
+          </tr>
+          <tr class="border-t">
+            <td class="py-2 px-4">Proyecto de Programación</td>
+            <td class="py-2 px-4">Programación</td>
+            <td class="py-2 px-4">2025-07-10</td>
+            <td class="py-2 px-4 text-blue-600">En Progreso</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </body>
 </html>
+
