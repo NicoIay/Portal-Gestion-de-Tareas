@@ -1,66 +1,91 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Dashboard - Portal Gestión de Tareas</title>
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - Portal Gestión de Tareas</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body class="bg-gray-50 min-h-screen p-6">
-  <div class="max-w-7xl mx-auto space-y-6">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-      <div class="bg-white p-4 rounded-xl shadow flex flex-col">
-        <span class="text-sm text-gray-500">Tareas Completadas</span>
-        <span class="text-2xl font-bold mt-2">45</span>
+<body>
+  <div class="container">
+    <div class="grid-cards">
+      <div class="card">
+        <span>Tareas Completadas</span>
+        <h2>45</h2>
       </div>
-      <div class="bg-white p-4 rounded-xl shadow flex flex-col">
-        <span class="text-sm text-gray-500">Tareas Pendientes</span>
-        <span class="text-2xl font-bold mt-2">12</span>
+      <div class="card">
+        <span>Tareas Pendientes</span>
+        <h2>12</h2>
       </div>
-      <div class="bg-white p-4 rounded-xl shadow flex flex-col">
-        <span class="text-sm text-gray-500">Total Tareas</span>
-        <span class="text-2xl font-bold mt-2">57</span>
+      <div class="card">
+        <span>Total Tareas</span>
+        <h2>57</h2>
       </div>
-      <div class="bg-white p-4 rounded-xl shadow flex flex-col">
-        <span class="text-sm text-gray-500">Porcentaje Completadas</span>
-        <span class="text-2xl font-bold mt-2">79%</span>
+      <div class="card">
+        <span>Porcentaje Completadas</span>
+        <h2>79%</h2>
       </div>
     </div>
 
-    <div class="bg-white p-6 rounded-xl shadow">
-      <h2 class="text-lg font-semibold mb-4">Resumen de Tareas</h2>
-      <table class="w-full text-left border border-gray-200 rounded-lg overflow-hidden">
-        <thead class="bg-gray-100">
+    <div class="card chart-card">
+      <h2>Estadísticas de Tareas</h2>
+      <canvas id="tasksChart"></canvas>
+    </div>
+
+    <div class="card table-card">
+      <h2>Resumen de Tareas</h2>
+      <table>
+        <thead>
           <tr>
-            <th class="py-2 px-4">Nombre</th>
-            <th class="py-2 px-4">Materia</th>
-            <th class="py-2 px-4">Fecha de Entrega</th>
-            <th class="py-2 px-4">Estado</th>
+            <th>Nombre</th>
+            <th>Materia</th>
+            <th>Fecha de Entrega</th>
+            <th>Estado</th>
           </tr>
         </thead>
         <tbody>
-          <tr class="border-t">
-            <td class="py-2 px-4">Práctica de Física</td>
-            <td class="py-2 px-4">Física</td>
-            <td class="py-2 px-4">2025-07-01</td>
-            <td class="py-2 px-4 text-green-600">Completada</td>
+          <tr>
+            <td>Práctica de Física</td>
+            <td>Física</td>
+            <td>2025-07-01</td>
+            <td class="completed">Completada</td>
           </tr>
-          <tr class="border-t">
-            <td class="py-2 px-4">Taller de Matemáticas</td>
-            <td class="py-2 px-4">Matemáticas</td>
-            <td class="py-2 px-4">2025-07-05</td>
-            <td class="py-2 px-4 text-yellow-500">Pendiente</td>
+          <tr>
+            <td>Taller de Matemáticas</td>
+            <td>Matemáticas</td>
+            <td>2025-07-05</td>
+            <td class="pending">Pendiente</td>
           </tr>
-          <tr class="border-t">
-            <td class="py-2 px-4">Proyecto de Programación</td>
-            <td class="py-2 px-4">Programación</td>
-            <td class="py-2 px-4">2025-07-10</td>
-            <td class="py-2 px-4 text-blue-600">En Progreso</td>
+          <tr>
+            <td>Proyecto de Programación</td>
+            <td>Programación</td>
+            <td>2025-07-10</td>
+            <td class="progress">En Progreso</td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
+
+  <script>
+    const ctx = document.getElementById('tasksChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Completadas', 'Pendientes', 'En Progreso'],
+        datasets: [{
+          label: 'Tareas',
+          data: [45, 12, 7],
+          backgroundColor: ['#4ade80', '#facc15', '#60a5fa'],
+        }]
+      },
+      options: {
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+  </script>
 </body>
 </html>
-
